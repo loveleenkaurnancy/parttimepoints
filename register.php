@@ -110,7 +110,7 @@ if(isset($_POST['submit']))
                 <input placeholder="Name" class="form-control" name="name">
               </div>
 	            <div class="form-group">
-	              <input placeholder="Email" class="form-control" name="email">
+	              <input type="email" placeholder="Email" class="form-control" name="email">
 	            </div>
 	            <div class="form-group">
 	              <input type="password" placeholder="Password" class="form-control" name="password" id="password">

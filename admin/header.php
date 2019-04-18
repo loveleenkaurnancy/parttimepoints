@@ -16,7 +16,8 @@ if($adminname == "")
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>Admin Panel</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" type="image/png" href="assets/images/icon/favicon.ico">
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/icon" href="../assets/images/logo.png"/>
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/font-awesome.min.css">
     <link rel="stylesheet" href="assets/css/themify-icons.css">
@@ -62,8 +63,9 @@ if($adminname == "")
                 <div class="menu-inner">
                     <nav>
                         <ul class="metismenu" id="menu">
-                            <li><a href="home.php"><i class="ti-dashboard"></i> <span>Home</span></a></li>
-                            <li class="active">
+                            <li <?php if($page =="home") echo "class='active'" ?>><a href="home.php"><i class="ti-home"></i> <span>Home</span></a></li>
+                            <li <?php if($page =="register") echo "class='active'" ?>><a href="register.php"><i class="ti-user"></i> <span>Users</span></a></li>
+                           <!--  <li class="active">
                                 <a href="javascript:void(0)" aria-expanded="true"><i class="ti-dashboard"></i><span>dashboard</span></a>
                                 <ul class="collapse">
                                     <li class="active"><a href="index.html">ICO dashboard</a></li>
@@ -168,10 +170,36 @@ if($adminname == "")
                                     </li>
                                     <li><a href="#">Item level (1)</a></li>
                                 </ul>
-                            </li>
+                            </li> -->
                         </ul>
                     </nav>
                 </div>
             </div>
         </div>
         <!-- sidebar menu area end -->
+
+        <!-- main content area start -->
+        <div class="main-content">
+            <!-- header area start -->
+            <div class="header-area" style="padding-top: 0px; padding-bottom: 0px;">
+                <div class="row align-items-center">
+                    <!-- nav and search button -->
+                    <div class="col-md-6 col-sm-8 clearfix">
+                        <div class="nav-btn pull-left">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+                    <!-- profile info & task notification -->
+                    <div class="col-md-6 col-sm-4 clearfix">
+                         <div class="user-profile pull-right">
+                            <h4 class="user-name dropdown-toggle" data-toggle="dropdown"><?php echo $_SESSION['adminname']; ?> <i class="fa fa-angle-down"></i></h4>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="logout.php">Log Out</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- header area end -->
