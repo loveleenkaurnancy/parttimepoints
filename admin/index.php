@@ -1,16 +1,17 @@
 <?php
 include("../config.php");
 
-// @$id=$_SESSION['id'];
+session_start();
+@$adminname=$_SESSION['adminname'];
 
-// if($id == "")
-// {
-  
-// }
-// else
-// {
-//   echo "<script>window.open('home.php', '_self')</script>";
-// }
+if($adminname == "")
+{
+  echo "hello";
+}
+else
+{
+    header("location: home.php"); 
+}
 
 if(isset($_POST['submit']))
 {
@@ -24,7 +25,6 @@ if(isset($_POST['submit']))
     if(mysqli_num_rows($query)>0)
     {
         $row = mysqli_fetch_array($query);
-        session_start();
         $_SESSION['adminid'] = $row['id'];
         $_SESSION['adminname'] = $row['name'];
         $_SESSION['adminemail'] = $row['email'];
@@ -50,7 +50,7 @@ if(isset($_POST['submit']))
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Login - srtdash</title>
+    <title>Admin Panel</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" type="image/png" href="assets/images/icon/favicon.ico">
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
