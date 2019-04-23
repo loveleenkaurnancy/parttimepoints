@@ -65,7 +65,7 @@ $flag2 = 0;
           <div class="col-md-6 col-sm-6 col-xs-12">
             <div class="single-page-header-left">
               <h2><?php echo "$name"; ?></h2>
-              <!-- <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p> -->
+              <p><?php echo "$r[profession]"; ?></p>
             </div>
           </div>
           <div class="col-md-6 col-sm-6 col-xs-12">
@@ -130,7 +130,7 @@ $flag2 = 0;
                 </div>
 
                 <div class="single-feature wow">
-                  <h4 class="feat-title">Profit</h4>
+                  <h4 class="feat-title">Profit Sharing %</h4>
                   <?php
                     echo "<p>$r[profit]%</p>";
                   ?>

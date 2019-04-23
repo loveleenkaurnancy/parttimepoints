@@ -6,7 +6,7 @@ session_start();
 
 if($adminname == "")
 {
-  echo "hello";
+  // echo "hello";
 }
 else
 {

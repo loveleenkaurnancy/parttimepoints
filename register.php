@@ -14,16 +14,18 @@ if(isset($_POST['submit']))
 {
   $name = $_POST['name'];
   $email = $_POST['email'];
+  $profession = $_POST['profession'];
   $password = md5($_POST['password']);
 
-  $q = mysqli_query($con, "SELECT * FROM REGISTER where email ='$email'");
+  $q = mysqli_query($con, "SELECT * FROM register where email ='$email'");
   if(mysqli_num_rows($q) > 0)
   {
     $msg2 = "Email Already Registered";
   }
   else
   {
-    $query = mysqli_query($con, "INSERT INTO REGISTER(name, email, password) values ('$name', '$email', '$password')");
+    $query = mysqli_query($con, "INSERT INTO `register`(`name`, `email`, `profession`, `password`) VALUES ('$name', '$email', '$profession', '$password')");
+    
 
     if($query)
     {
@@ -105,25 +107,28 @@ if(isset($_POST['submit']))
             }
           ?>
 
-  			   <form method="POST">
+           <form method="POST">
               <div class="form-group">
-                <input placeholder="Name" class="form-control" name="name">
+                <input placeholder="Name" class="form-control" name="name" required="required">
               </div>
-	            <div class="form-group">
-	              <input type="email" placeholder="Email" class="form-control" name="email">
-	            </div>
-	            <div class="form-group">
-	              <input type="password" placeholder="Password" class="form-control" name="password" id="password">
+              <div class="form-group">
+                <input type="email" placeholder="Email" class="form-control" name="email"  required="required">
+              </div>
+              <div class="form-group">
+                <input placeholder="Profession" class="form-control" name="profession" required="required">
+              </div>
+              <div class="form-group">
+                <input type="password" placeholder="Password" class="form-control" name="password" id="password" required="required">
                 <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password" onclick="myFunction()"></span>
-	            </div>
-	            <div class="loginbox">
-	              <button type="submit" name="submit" class="btn signin-btn">REGISTER</button>
-	            </div>
-	            <div class="signupbox">
-	              <span><br>Already got account? <a href="index.php">Sign In.</a></span>
-	            </div>
-	            
-          	</form>
+              </div>
+              <div class="loginbox">
+                <button type="submit" name="submit" class="btn signin-btn">REGISTER</button>
+              </div>
+              <div class="signupbox">
+                <span><br>Already got account? <a href="index.php">Sign In.</a></span>
+              </div>
+              
+            </form>
           </div>
       </div>
   </div>

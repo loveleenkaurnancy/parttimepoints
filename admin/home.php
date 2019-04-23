@@ -9,6 +9,7 @@ include("header.php");
                 <div class="sales-report-area mt-5 mb-5">
                     <div class="row">
                         <div class="col-md-4">
+                          <a href="register.php">
                             <div class="single-report mb-xs-30">
                                 <div class="s-report-inner pr--20 pt--30 mb-3">
                                     <div class="icon"><i class="fa fa-user"></i></div>
@@ -24,6 +25,7 @@ include("header.php");
                                     </div>
                                 </div>
                             </div>
+                          </a>
                         </div>
                         <div class="col-md-4">
                         	

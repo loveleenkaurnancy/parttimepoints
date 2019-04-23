@@ -80,6 +80,7 @@ if(isset($_POST['delete']))
                                                 <th>Sr.</th>
                                                 <th>Name</th>
                                                 <th>Email</th>
+                                                <th>Profession</th>
                                                 <th>Points</th>
                                                 <th>Profit</th>
                                                 <th>Action</th>
@@ -95,6 +96,7 @@ if(isset($_POST['delete']))
                                                 echo "<tr><td>$idd</td>";
                                                 echo "<td>$row[name]</td>";
                                                 echo "<td>$row[email]</td>";
+                                                echo "<td>$row[profession]</td>";
                                                 echo "<td>$row[points]</td>";
                                                 echo "<td>$row[profit]%</td>";
                                                 echo '<td><button type="button" class="btn btn-rounded btn-primary mb-3" data-toggle="modal" data-target="#modal'.$row['id'].'">Edit</button>&nbsp;&nbsp;';
